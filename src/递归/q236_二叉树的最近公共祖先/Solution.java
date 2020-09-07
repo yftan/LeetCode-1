@@ -10,14 +10,27 @@ class Solution {
         }
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
-        if (left != null && right == null) {
-            //左子树上能找到，但是右子树上找不到，此时就应当直接返回左子树的查找结果
+        // 如果左子树有，右子树没有，证明都在左子树。
+        if(left !=null && right ==null) {
             return left;
-        } else if (left == null) {
-            //右子树上能找到，但是左子树上找不到，此时就应当直接返回右子树的查找结果
+        } else if(left==null && right !=null ) {
+                // 如果左子树没有，右子树有，证明都在右子树。
             return right;
+        } else if( left==null && right ==null ){
+            // 如果左子树没有，右子树没有，则返回null。
+            return null;
+        } else {
+            // 如果左子树，右子树都有，则返回root
+            return root;
         }
-        //左右子树上均能找到，说明此时的p结点和q结点分居root结点两侧，此时就应当直接返回root结点
-        return root;
+        // if (left != null && right == null) {
+        //     //左子树上能找到，但是右子树上找不到，此时就应当直接返回左子树的查找结果
+        //     return left;
+        // } else if (left == null) {
+        //     //右子树上能找到，但是左子树上找不到，此时就应当直接返回右子树的查找结果
+        //     return right;
+        // }
+        // //左右子树上均能找到，说明此时的p结点和q结点分居root结点两侧，此时就应当直接返回root结点
+        // return root;
     }
 }
