@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 回溯法 o((4^n)/(n^1/2))
  */
-public class Solution {
+public class Solution1 {
 
     public List<String> generateParenthesis(int n) {
         List<String> ans = new ArrayList();
@@ -29,6 +29,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().generateParenthesis(3));
+        System.out.println(new Solution1().generateParenthesis(3));
     }
 }

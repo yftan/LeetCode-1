@@ -37,6 +37,6 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        new Solution().combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
+        new Solution().combinationSum2(new int[]{1, 1, 2, 7, 6, 1, 5}, 8);
     }
 }
