@@ -5,6 +5,7 @@ package 回溯法.q10_正则表达式匹配;
  */
 public class Solution {
     public boolean isMatch(String text, String pattern) {
+        // 如果pattern为空，text也为空也
         if (pattern.isEmpty()){
             return text.isEmpty();
         }
@@ -20,6 +21,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().isMatch("aaa", "a*a"));
+        System.out.println(new Solution().isMatch("bbcc", "cc"));
     }
 }

@@ -13,4 +13,22 @@ public class Solution {
         }
         return slow;
     }
+
+    // 利用一个虚拟节点
+    public ListNode middleNode1(ListNode head) {
+        if(head.next == null) return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        while(fast != null) {
+            slow = slow.next;
+            if(fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return slow;
+            }
+        }
+        return slow;
+    }
 }

@@ -40,4 +40,31 @@ public class Solution {
         }
         return levels;
     }
+
+    public List<List<Integer>> levelOrder1(TreeNode root) {
+        List<List<Integer>> res = new ArrayList();
+        if (root == null) return res;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()) {
+            List<Integer> resSub =  new ArrayList();
+            // 重点就是这个size，通过他就知道每层有几个元素了
+            int size = q.size();
+
+            for(int i=0; i< size; i++) {
+                TreeNode tmp = q.remove();
+                resSub.add(tmp.val);
+                if(tmp.left != null ) {
+                    q.add(tmp.left);
+                }
+                if(tmp.right != null) {
+                    q.add(tmp.right);
+                }
+            }
+            res.add(resSub);
+        }
+        return res;
+
+    }
+
 }
