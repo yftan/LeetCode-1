@@ -25,4 +25,15 @@ class Solution {
         }
         return rs;
     }
+
+    public ListNode reverseList1(ListNode head) {
+        if(head == null) return null;
+        if(head.next == null) {
+            return head;
+        }
+        ListNode last = reverseList(head.next);
+        head.next.next = head;
+        head.next=null;
+        return last;
+    }
 }
