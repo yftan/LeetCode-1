@@ -3,6 +3,9 @@ package Microsoft.q207_课程表;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 利用链接表
+ */
 public class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // 方法一：利用邻接图+BFS方法
