@@ -33,4 +33,21 @@ public class Solution {
         }
         return rs;
     }
+
+    public int lengthOfLIS1(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        int max = Integer.MIN_VALUE;
+        int len = nums.length;
+        int[] dp = new int[len];
+        for (int i = 1; i < len; i++) {
+            for(int j=0; j < i; j++) {
+                if(nums[i] > nums[j]) {
+                    dp[i] = Math.max(dp[j]+1, dp[i]);
+                }
+            }
+            max = Math.max(dp[i], max);
+        }
+
+        return max+1;
+    }
 }
