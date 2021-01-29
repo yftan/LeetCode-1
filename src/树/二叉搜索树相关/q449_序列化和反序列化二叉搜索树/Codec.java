@@ -1,4 +1,4 @@
-package 二叉搜索树相关.q449_序列化和反序列化二叉搜索树;
+package 树.二叉搜索树相关.q449_序列化和反序列化二叉搜索树;
 
 /**
  * Definition for a binary tree node.

@@ -1,4 +1,4 @@
-package q119_杨辉三角II;
+package 动态规划.q119_杨辉三角II;
 
 import java.util.ArrayList;
 import java.util.List;

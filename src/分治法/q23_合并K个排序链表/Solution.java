@@ -7,33 +7,38 @@ class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
-        }
-        if (l2 == null) {
+        } else if (l2 == null) {
             return l1;
+        } else if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
         }
-        ListNode head = new ListNode(Integer.MIN_VALUE);
-        head.next = l1;
-        ListNode pre = head;
-        while (l2 != null) {
-            ListNode t1 = pre.next;
-            ListNode t2 = l2.next;
-            while (l2.val > t1.val) {
-                if (t1.next == null) {
-                    t1.next = l2;
-                    return head.next;
-                } else {
-                    pre = pre.next;
-                    t1 = t1.next;
-                }
-            }
-            pre.next = l2;
-            l2.next = t1;
-            l2 = t2;
-        }
-        return head.next;
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        return merge(lists, 0, lists.length - 1);
+    }
+
+    private ListNode merge(ListNode[] lists, int left, int right) {
+        if (left == right) return lists[left];
+        int mid = left + (right - left) / 2;
+        ListNode l1 = merge(lists, left, mid);
+        ListNode l2 = merge(lists, mid + 1, right);
+        return mergeTwoLists(l1, l2);
+    }
+
+
+    /**
+     * 暴力解法
+     *
+     * @param lists
+     * @return
+     */
+    public ListNode mergeKLists1(ListNode[] lists) {
         if (lists.length == 0) {
             return null;
         }
