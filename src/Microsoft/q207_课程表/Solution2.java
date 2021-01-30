@@ -44,4 +44,12 @@ public class Solution2 {
         }
         return numCourses == 0;
     }
+
+    public static void main(String[] args) {
+        List<Character> list = new ArrayList<>();
+        list.add('c');
+        list.add('b');
+        System.out.println(list.contains('c'));
+
+    }
 }

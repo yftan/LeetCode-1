@@ -1,4 +1,4 @@
-package 分治法.q23_合并K个排序链表;
+package 递归.q23_合并K个排序链表;
 
 /**
  * 做k-1次mergeTwoLists  o(N*k) 可用分治法优化至o(N*log(k))) N为所有list的总节点数
@@ -30,7 +30,7 @@ class Solution {
         ListNode l2 = merge(lists, mid + 1, right);
         return mergeTwoLists(l1, l2);
     }
-
+    
 
     /**
      * 暴力解法

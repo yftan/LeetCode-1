@@ -116,17 +116,17 @@
 
 ### Tree Traversal
 
-- [Question 94 : Binary Tree Inorder Traversal](/src/树的遍历/q94_二叉树的中序遍历)
-- [Question 102 : Binary Tree Level Order Traversal](/src/树的遍历/q102_二叉树的层次遍历)
-- [Question 110 : Balanced Binary Tree](/src/树的遍历/q110_平衡二叉树)
-- [Question 144 : Binary Tree Preorder Traversal](/src/树的遍历/q144_二叉树的前序遍历)
-- [Question 145 : Binary Tree Postorder Traversal](/src/树的遍历/q145_二叉树的后序遍历)
+- [Question 94 : Binary Tree Inorder Traversal](/树/树的遍历/q94_二叉树的中序遍历)
+- [Question 102 : Binary Tree Level Order Traversal](/树/树的遍历/q102_二叉树的层次遍历)
+- [Question 110 : Balanced Binary Tree](/树/树的遍历/q110_平衡二叉树)
+- [Question 144 : Binary Tree Preorder Traversal](/树/树的遍历/q144_二叉树的前序遍历)
+- [Question 145 : Binary Tree Postorder Traversal](/树/树的遍历/q145_二叉树的后序遍历)
 
 ### Binary Search Tree
 
-- [Question 98 : Validate Binary Search Tree](/src/二叉搜索树相关/q98_验证二叉搜索树)
-- [Question 450 : Delete Node in a BST](/src/二叉搜索树相关/q450_删除二叉搜索树中的节点)
-- [Question 701 : Insert into a Binary Search Tree](/src/二叉搜索树相关/q701_二叉搜索树中的插入操作)
+- [Question 98 : Validate Binary Search Tree](/树/二叉搜索树相关/q98_验证二叉搜索树)
+- [Question 450 : Delete Node in a BST](/树/二叉搜索树相关/q450_删除二叉搜索树中的节点)
+- [Question 701 : Insert into a Binary Search Tree](/树/二叉搜索树相关/q701_二叉搜索树中的插入操作)
 
 ---
 
