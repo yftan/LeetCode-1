@@ -8,13 +8,13 @@ class Solution {
      */
     public void rotate(int[][] matrix) {
         int n = matrix.length;
-        for(int i=0;i<matrix.length/2;i++){
-            for(int j =i;j<n-i-1;j++){
-                int temp =matrix[i][j];
-                matrix[i][j] = matrix[n-j-1][i];
-                matrix[n-j-1][i] = matrix[n-i-1][n-j-1];
-                matrix[n-i-1][n-j-1] = matrix[j][n-i-1];
-                matrix[j][n-i-1] = temp;
+        for(int times=0;times<matrix.length/2;times++){
+            for(int j =times;j<n-times-1;j++){
+                int temp =matrix[times][j];
+                matrix[times][j] = matrix[n-j-1][times];
+                matrix[n-j-1][times] = matrix[n-times-1][n-j-1];
+                matrix[n-times-1][n-j-1] = matrix[j][n-times-1];
+                matrix[j][n-times-1] = temp;
             }
         }
     }
