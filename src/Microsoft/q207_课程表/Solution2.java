@@ -46,10 +46,9 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        List<Character> list = new ArrayList<>();
-        list.add('c');
-        list.add('b');
-        System.out.println(list.contains('c'));
+        int numCourses = 5;
+        int[][] prerequisites = {{1, 4}, {2, 4}, {3, 1}, {3, 2}};
+        System.out.println(new Solution2().canFinish(numCourses, prerequisites));
 
     }
 }

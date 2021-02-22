@@ -11,7 +11,7 @@ package 二分法.q287_寻找重复数;
  *
  * 以 [2, 4, 5, 2, 3, 1, 6, 7] 为例，一共 8 个数，n + 1 = 8，n = 7，根据题目意思，每个数都在 1 和 7 之间。
  *
- * 例如：区间 [1, 7][1,7] 的中位数是 4，遍历整个数组，统计小于等于 4 的整数的个数，如果不存在重复元素，最多为 44 个。等于 44 的时候区间 [1, 4][1,4] 内也可能有重复元素。但是，如果整个数组里小于等于 4 的整数的个数严格大于 44 的时候，就可以说明重复的数存在于区间 [1, 4][1,4]。
+ * 例如：区间 [1, 7][1,7] 的中位数是 4，遍历整个数组，统计小于等于 4 的整数的个数，如果不存在重复元素，最多为 4 个。等于 4 的时候区间 [1, 4] 内也可能有重复元素。但是，如果整个数组里小于等于 4 的整数的个数严格大于 4 的时候，就可以说明重复的数存在于区间 [1, 4]。
  *
  * 说明：由于这个算法是空间敏感的，「用时间换空间」是反常规做法，算法的运行效率肯定不会高。
  *
@@ -38,5 +38,33 @@ public class Solution {
             }
         }
         return left;
+    }
+
+    public int findDuplicate1(int[] nums) {
+        if(nums == null || nums.length == 0) return -1;
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            while(nums[i]-1 != i && nums[i]-1 < len && nums[nums[i]-1] != nums[i]){
+                swap(nums, nums[i]-1, i);
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + ",");
+            if(nums[i]-1 != i) {
+                return nums[i];
+            }
+        }
+        return -1;
+    }
+
+    public void swap(int[] nums, int a, int b) {
+        int tmp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{2,5,9,6,9,3,8,9,7,1};
+        int duplicate1 = new Solution().findDuplicate1(nums);
     }
 }
